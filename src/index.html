@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+
+    Vue.component('question-box', {
+        props: [currentQuestion],
+        data: function () {
+            return {
+                selectedIndex: null,
+                correctIndex: null,
+                shuffledAnswers: [],
+                answered: false
+            }
+        },
+        methods: {
+            selectAnswer: function (index) {
+                this.selectedIndex = index
+            },
+            shuffleAnswers: function () {
+                let answers = [...this.currentQuestion.incorrect_answers, this.currentQuestion.correct_answer]
+                this.shuffledAnswers = _.shuffle(answers)
+                this.correctIndex = this.shuffledAnswers.indexOf(this.currentQuestion.correct_answer)
+            },
+            submitAnswer: function () {
+                let isCorrect = false
+
+                if (this.selectedIndex === this.correctIndex) {
+                    isCorrect = true
+                }
+                this.answered = true
+                this.increment(isCorrect)
+            },
+            answerClass: function (index) {
+                let answerClass = ' '
+                if (!this.answered && this.selectedIndex === index) {
+                    answerClass = 'selected'
+                } else if (this.answered && this.correctIndex === index) {
+                    answerClass = 'correct'
+                } else if (this.answered && this.selectedIndex === index && this.correctIndex !== index) {
+                    answerClass = 'incorrect'
+                }
+                return answerClass
+            }
+        },
+
+        template:
+            `<div class="question-box-container">
+    <b-jumbotron>
+        <template v-slot:lead>
+            {{currentQuestion.question}}
+        </template>
+
+        <hr class="my-4">
+        <b-list-group>
+            <b-list-group-item v-for="(answer, index) in shuffledAnswers" :key="index"
+                @click.prevent="selectAnswer(index)" :class="answerClass(index)">
+                {{ answer }}
+            </b-list-group-item>
+        </b-list-group>
+
+        <b-button @click="previous" variant="success" href="#">
+            Previous
+        </b-button>
+        <b-button variant="primary" @click="submitAnswer" :disabled="selectedIndex === null || answered">
+            Submit
+        </b-button>
+        <b-button @click="next" variant="success" href="#">
+            Next
+        </b-button>
+    </b-jumbotron>
+</div>
+`
+    })
+
+    new Vue({
+        el: '.app',
+        data: {
+            message: 'Hello World'
+        }
+    })
+</script>
+
+</html>

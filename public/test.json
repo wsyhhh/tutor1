@@ -1,0 +1,85 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "How to import an excel file and assign to a variable? (Show the excel file that is being used to import)?",
+            "correct_answer": "a = read_excel('Credit Risk Data.xlsx', skip = 2)",
+            "incorrect_answers": [
+                "read_excel(Credit Risk Data.xlsx)",
+                "B = read_excel(“Credit Risk Data xlsx”)",
+                "a = read.csv(Credit Risk Data)"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "How to export the dataset (df1) as csv file named export?",
+            "correct_answer": "write.table(df1, file = 'export', sep = ',', row.names = FALSE)",
+            "incorrect_answers": [
+                "write.csv(df1 , file = export, row.names = FALSE)",
+                "write.csv(df1, file = ëxport”, sep = “,” , row.names = FALSE)",
+                "table(df1, file = 'export', sep = ',', row.names = FALSE)"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In the title of the game &quot;Luigi&#039;s Mansion&quot;, what is the only letter to not appear with a pair of eyes in it?",
+            "correct_answer": "s",
+            "incorrect_answers": [
+                "n",
+                "i",
+                "m"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "David Baszucki was a co-founder of ROBLOX Corporation.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "Klingons respect their disabled comrades, and those who are old, injuried, and helpless.",
+            "correct_answer": "False",
+            "incorrect_answers": [
+                "True"
+            ]
+        },
+        {
+            "category": "Sports",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What is the full name of the footballer &quot;Cristiano Ronaldo&quot;?",
+            "correct_answer": "Cristiano Ronaldo dos Santos Aveiro",
+            "incorrect_answers": [
+                "Cristiano Ronaldo los Santos Diego",
+                "Cristiano Armando Diego Ronaldo",
+                "Cristiano Luis Armando Ronaldo"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In &quot;Call Of Duty: Zombies&quot;, what is the name of the Pack-A-Punched Crossbow?",
+            "correct_answer": "Awful Lawton",
+            "incorrect_answers": [
+                "Longinus",
+                "V-R11",
+                "Predator"
+            ]
+        }
+    ]
+}
