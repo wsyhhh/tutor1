@@ -1,10 +1,13 @@
 <template>
   <div>
-    <b-embed
-        type="iframe"
-        aspect="16by9"
-        src="https://www.youtube.com/embed/etp33vqdYNI"
-  ></b-embed>
+      <div class="mx-auto bg-info" style="width: 600px" >
+        <b-embed
+            type="iframe"
+            aspect="16by9"
+            src="https://www.youtube.com/embed/etp33vqdYNI"
+            allowfullscreen
+        ></b-embed>
+        </div>
     <b-container fluid>
       <QuestionBox
         v-if="questions.length"
