@@ -4,7 +4,6 @@
         type="iframe"
         aspect="16by9"
         src="https://www.youtube.com/embed/etp33vqdYNI"
-        allowfullscreen
   ></b-embed>
     <b-container fluid>
       <QuestionBox
