@@ -27,6 +27,11 @@
 			>
 				Submit
 			</b-button>
+            <b-button id="popover-3" variant="primary">Hint</b-button>
+            <b-popover target="popover-3" triggers="hover focus">
+                <!--template v-slot:title>Content via Slots</template-->
+                {{currentQuestion.hint}}
+            </b-popover>
 			<b-button @click="next" variant="success" href="#">
 				Next
 			</b-button>

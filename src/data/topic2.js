@@ -6,7 +6,8 @@ export default [
 			'2',
 			'1',
 			'4'
-		]
+        ],
+        hint: 'hint'
 	},
 	{
 		question: 'What cannot be found using the describe function? IQR and ___',
@@ -15,6 +16,7 @@ export default [
 			'skew',
 			'median',
 			'kurtosis'
-		]
+        ],
+        hint: 'hint'
 	},
 ]
