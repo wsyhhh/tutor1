@@ -91,6 +91,24 @@ export default {
       }
       this.answered = true
       this.increment(isCorrect)
+      const gatewayUrl =
+        "https://oo3olpgm5m.execute-api.us-east-1.amazonaws.com/default/tutor_week12";
+        console.log("hello world");
+      fetch(gatewayUrl, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {code: 'x <- 6'}
+        //     {
+        //   shown: { 0: this.uiItem.tabItems.test },
+        //   editable: { 0: this.uiItem.tabItems.editable },
+        //   hidden: { 0: this.uiItem.hidden }
+        // }
+        )
+      })
     },
     answerClass (index) {
       let answerClass = ' '
