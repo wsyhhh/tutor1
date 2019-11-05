@@ -1,5 +1,6 @@
 <template>
   <div>
+      <h1> Introduction to R </h1>
       <div class="mx-auto bg-info" style="width: 600px" >
         <b-embed
             type="iframe"
