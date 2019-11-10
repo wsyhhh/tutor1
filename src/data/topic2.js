@@ -11,7 +11,7 @@ export default [
 	},
 	{
 		question: 'What cannot be found using the describe function? IQR and ___',
-		correct_answer: 'IQR',
+		correct_answer: 'variance',
 		incorrect_answers: [
 			'skew',
 			'median',
