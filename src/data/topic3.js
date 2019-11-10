@@ -6,7 +6,7 @@ export default [
       'normality',
       'independence of observation'
     ],
-    hint: 'hint'
+    hint: 'Annova is fairly robust for departure from normality'
   },
   {
     question: 'What are the two tests for equality of means?',
@@ -16,7 +16,7 @@ export default [
       'Levene\'s and Kruskal',
       'F-test and t-test'
     ],
-    hint: 'hint'
+    hint: 'What is the test to use for non-parametric distribution?'
   },
   {
     question: 'Out of the 3 options, which test for equality of variance requires normality?',
@@ -25,6 +25,6 @@ export default [
       'Levene\'s',
       'Fligner-Killeen'
     ],
-    hint: 'hint'
+    hint: 'Watch the video carefully'
   }
 ]

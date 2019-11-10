@@ -7,7 +7,7 @@ export default [
 			'1',
 			'4'
         ],
-        hint: 'hint'
+        hint: 'Watch the video carefully'
 	},
 	{
 		question: 'What cannot be found using the describe function? IQR and ___',
@@ -17,6 +17,6 @@ export default [
 			'median',
 			'kurtosis'
         ],
-        hint: 'hint'
+        hint: 'One of the variables for location'
 	},
 ]
