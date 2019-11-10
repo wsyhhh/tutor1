@@ -1,5 +1,23 @@
 <template>
   <div>
+    <h1 style="font-size:60px">Basic testing</h1>
+    <div class="mx-auto bg-info" style="width: 600px; margin-bottom: 15px">
+    <b-embed
+        type="iframe"
+        aspect="16by9"
+        src="https://www.youtube.com/embed/BVsDt-9Sy_g"
+        allowfullscreen
+    ></b-embed>
+    </div>
+    <div>
+			<b-button v-b-toggle.collapse-1 variant="primary">Summary</b-button>
+			<b-collapse id="collapse-1" class="mt-2">
+				<b-card style="text-align:left">
+					<p> Summary will be added
+					</p>
+				</b-card>
+			</b-collapse>
+		</div>
     <b-container fluid>
       <QuestionBox
         v-if="questions.length"
