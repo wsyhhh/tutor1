@@ -21,10 +21,10 @@ export default [
     },
     {
         question: 'How to retrieve the column vector named "Price", third column from a dataframe(df1)',
-        correct_answer: 'd1$Price',
+        correct_answer: 'df1$Price',
         incorrect_answers: [
-            'd1.Price',
-            'vector(d1$Price)',
+            'df1.Price',
+            'vector(df1$Price)',
             'vector(df1[,3])'
         ],
         hint: 'You should be familiar with using $'
