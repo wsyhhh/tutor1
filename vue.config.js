@@ -1,5 +1,7 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: 'tutor1/',
-  baseUrl: 'tutor1/'
+  publicPath: process.env.NODE_ENV === 'production'
+        ? '/tutor1/'
+        : '/'
+  
 }
