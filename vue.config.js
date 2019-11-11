@@ -1,4 +1,5 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: 'tutor1/'
+  publicPath: 'tutor1/',
+  baseUrl: '\'
 }
