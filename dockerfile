@@ -3,7 +3,7 @@
 FROM python:3.6-alpine
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh jq && \
+    apk add --no-cache bash git openssh jq git-subtree && \
     apk add --update nodejs nodejs-npm
 
 ADD entrypoint.sh /entrypoint.sh
