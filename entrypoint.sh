@@ -26,9 +26,14 @@ case "$FOLDER" in /*|./*)
 esac
 
 # Installs Git and jq.
-apt-get update && \
-apt-get install -y git && \
-apt-get install -y jq && \
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache git\
+    apk add jq
+
+# apt-get update && \
+# apt-get install -y git && \
+# apt-get install -y jq && \
 
 # Gets the commit email/name if it exists in the push event payload.
 COMMIT_EMAIL=`jq '.pusher.email' ${GITHUB_EVENT_PATH}`
