@@ -10,8 +10,8 @@
       ></b-embed>
     </div>
 		<div>
-			<b-button v-b-toggle.collapse-1 variant="primary">Summary</b-button>
-			<b-collapse id="collapse-1" class="mt-2">
+			<b-button v-b-toggle.collapse-summary variant="primary">Summary</b-button>
+			<b-collapse id="collapse-summary" class="mt-2">
 				<b-card style="text-align:left">
 					<p>
 						<b>To set your working directory to allow documents to be imported and exported to a common location</b><br>
@@ -59,13 +59,14 @@
 			</b-collapse>
 		</div>
     <b-container fluid>
+        <div>
       <QuestionBox
         v-if="questions.length"
         :currentQuestion="questions[index]"
         :next="next"
         :previous="previous"
         :increment="increment"
-      />
+      /> </div>
 		<div>
   		<b-jumbotron header="Interactive Coding" header-level="4" lead="A dataframe is created using the code below. Write a single function to find the average salary of the employees">
 				<div>

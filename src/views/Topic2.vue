@@ -10,8 +10,8 @@
         ></b-embed>
         </div>
     <div>
-			<b-button v-b-toggle.collapse-1 variant="primary">Summary</b-button>
-			<b-collapse id="collapse-1" class="mt-2">
+			<b-button v-b-toggle.collapse-summary variant="primary">Summary</b-button>
+			<b-collapse id="collapse-summary" class="mt-2">
 				<b-card style="text-align:left">
 					<p>
 						<b>Mean </b>mean(df$col1)

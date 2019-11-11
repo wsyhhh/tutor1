@@ -20,8 +20,8 @@
         :disabled="selectedIndex === null || answered"
       >Submit</b-button>
       <b-button @click="next" variant="success" href="#">Next</b-button>
-      <b-button v-b-toggle.collapse-1 variant="primary">Hint</b-button>
-			<b-collapse id="collapse-1" class="mt-2">
+      <b-button v-b-toggle.collapse-hint variant="primary">Hint</b-button>
+			<b-collapse id="collapse-hint" class="mt-2">
 					<b-card>
 					<p class="card-text">{{currentQuestion.hint}}</p>
 					</b-card>
