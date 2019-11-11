@@ -26,10 +26,10 @@ case "$FOLDER" in /*|./*)
 esac
 
 # Installs Git and jq.
-RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache git\
-    apk add jq
+# RUN apk update && \
+#     apk upgrade && \
+#     apk add --no-cache git\
+#     apk add jq
 
 # apt-get update && \
 # apt-get install -y git && \
