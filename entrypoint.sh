@@ -88,8 +88,10 @@ echo "Deploying to GitHub..." && \
 
 #
 cd dist
+cat index.html
 git init
 git add -A
+git status
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
