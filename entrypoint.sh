@@ -84,28 +84,26 @@ fi
 
 # Commits the data to Github.
 echo "Deploying to GitHub..." && \
-# git add -f $FOLDER && \
+
+git add -f $FOLDER && \
+git commit -m "Deploying to ${BRANCH} from ${BASE_BRANCH:-master} ${GITHUB_SHA}" --quiet && \
+git push $REPOSITORY_PATH `git subtree split --prefix $FOLDER ${BASE_BRANCH:-master}`:$BRANCH --force && \
+
 
 #
-cd dist
-cat index.html
-git init
-git add -A
-git status
-git commit -m 'deploy'
+# cd dist
+# cat index.html
+# git init
+# git add -A
+# git status
+# git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f $REPOSITORY_PATH master:gh-pages
+# # if you are deploying to https://<USERNAME>.github.io/<REPO>
+# git push -f $REPOSITORY_PATH master:gh-pages
 #
-
-
-# git commit -m "Deploying to ${BRANCH} from ${BASE_BRANCH:-master} ${GITHUB_SHA}" --quiet && \
-# git push $REPOSITORY_PATH `git subtree split --prefix $FOLDER ${BASE_BRANCH:-master}`:$BRANCH --force && \
-
 echo "Deployment succesful!"
 
 # start deploying to aws
-cd ..
 
 export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
