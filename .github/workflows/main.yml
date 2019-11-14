@@ -19,7 +19,7 @@ jobs:
         AWS_DEFAULT_REGION: "us-east-1"
         LAMBDA_FUNC_NAME: ${{ secrets.FUNC_NAME }}
         STACK_NAME: ${{ secrets.STACK_NAME }}
-        LAMBDA_HANDLER: "rproject/script"
+        LAMBDA_HANDLER: "lambda/script"
         LAMBDA_MEMORY: 1024
         LAMBDA_TIMEOUT: 100
         BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
