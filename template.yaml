@@ -12,7 +12,7 @@ Resources:
   SamRFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: lambda/
+      CodeUri: ./lambda-deploy.zip
       Handler: script.handler
       Runtime: provided
       Layers:
