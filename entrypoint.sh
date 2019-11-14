@@ -90,17 +90,6 @@ git commit -m "Deploying to ${BRANCH} from ${BASE_BRANCH:-master} ${GITHUB_SHA}"
 git push $REPOSITORY_PATH `git subtree split --prefix $FOLDER ${BASE_BRANCH:-master}`:$BRANCH --force && \
 
 
-#
-# cd dist
-# cat index.html
-# git init
-# git add -A
-# git status
-# git commit -m 'deploy'
-
-# # if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f $REPOSITORY_PATH master:gh-pages
-#
 echo "Deployment succesful!"
 
 # start deploying to aws
