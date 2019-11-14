@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sam build
+# sam build
 sam package --output-template \
     packaged.yaml --s3-bucket mylambdacollectionwk7
 sam  deploy --template-file packaged.yaml \
