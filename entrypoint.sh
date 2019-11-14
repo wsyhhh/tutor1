@@ -112,7 +112,7 @@ export AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN
 export APINAME="$LAMBDA_FUNC_NAME-API"
 
 rm -f lambda-deploy.zip
-zip -r ./lambda-deploy.zip *
+zip -r ./lambda-deploy.zip ./lambda/*
 pwd
 ls -ls .
 
