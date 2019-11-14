@@ -68,7 +68,7 @@
         :increment="increment"
       /> </div>
 		<div>
-  		<b-jumbotron header="Interactive Coding" header-level="4" lead="A dataframe is created using the code below. Write a single function to find the average salary of the employees">
+  		<b-jumbotron header="Interactive Coding" header-level="4" lead="A vector of employee names is given below. Create a dataframe called 'employ.data' from this vector. Create a new column in the dataframe to store the salary of the employees which are 21000, 23400 and 26800 respectively. Find the mean of the salary">
 				<div>
 				<codemirror class="question" v-model="codeGiven" :options="cmReadOnly">{{codeGiven}}</codemirror>
 				</div>
@@ -112,7 +112,7 @@ export default {
       numTotal: 0,
 			ans: "",
 			code: '',
-			codeGiven: "salary <- c(21000, 23400, 26800) \nemployee <- c('John Doe','Peter Gynn','Jolie Hope') \nemploy.data <- data.frame(employee, salary)",
+			codeGiven: "employee <- c('John Doe','Peter Gynn','Jolie Hope')",
 			cmOptions: {
 				mode: 'r',
 				lineNumbers: true,
@@ -155,16 +155,16 @@ export default {
       console.log("hello world");
       fetch(gatewayUrl, {
         method: "POST",
-				body: this.code
-				
-				// JSON.stringify(
-        //   { code: this.code }
-          //     {
-          //   shown: { 0: this.uiItem.tabItems.test },
-          //   editable: { 0: this.uiItem.tabItems.editable },
-          //   hidden: { 0: this.uiItem.hidden }
-          // }
-        //)
+        // headers: {
+        //       Accept: "application/json",
+        //       "Content-Type": "application/json"
+        //     },
+        body: this.code
+        // JSON.stringify({ //this.code
+        //         userToken: 'dummy_token',
+        //         editable: this.code,
+        //         hidden: 'dummy_hidden',
+        //         shown: 'dummy_shown'})
       })
         .then(response => {
           console.log(response);
