@@ -9,7 +9,7 @@ Globals:
     Timeout: 30
     Environment:
       Variables:
-        GIT_PAGE: "https://minhvuh.github.io/tutor1/"
+        GIT_PAGE: "https://tobereplace.github.io/tutor1/"
 
 Resources:
   SamRFunction:
