@@ -1,14 +1,5 @@
 # tutor1
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
 ### Compiles and minifies for production
 ```
@@ -18,12 +9,8 @@ npm run build
 ```
 npm run deploy
 ```
-
-
-### Lints and fixes files
+### Secrets you need to provide:
 ```
-npm run lint
+ACCESS_TOKEN
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
