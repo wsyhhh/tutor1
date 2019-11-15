@@ -2,8 +2,8 @@
 
 # sam build
 sam package --output-template-file \
-    packaged.yaml --s3-bucket "${BUCKET_NAME}"\
-    --parameter-overrides ParameterKey=GIT_PAGE ParameterValue="{$GIT_AUTHOR_NAME}.github.io/tutor1/"
+    packaged.yaml --s3-bucket "${BUCKET_NAME}"
 sam  deploy --template-file packaged.yaml \
     --region us-east-1 --capabilities \
-    CAPABILITY_IAM --stack-name samR4
+    CAPABILITY_IAM --stack-name samR4\
+    --parameter-overrides GIT_PAGE="{$GIT_AUTHOR_NAME}.github.io/tutor1/"
