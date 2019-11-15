@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1> tutoR by team Oof</h1>
+    <h1> tutoR I'm testing by team Oof</h1>
     <b-table striped hover :items="videos">
       <template v-slot:cell(link)="data">
         <!--a :href="`#${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`">{{ data.value }}</a-->
