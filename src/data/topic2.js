@@ -7,16 +7,16 @@ export default [
 			'1',
 			'4'
         ],
-        hint: 'hint'
+        hint: 'Watch the video carefully'
 	},
 	{
 		question: 'What cannot be found using the describe function? IQR and ___',
-		correct_answer: 'IQR',
+		correct_answer: 'variance',
 		incorrect_answers: [
 			'skew',
 			'median',
 			'kurtosis'
         ],
-        hint: 'hint'
+        hint: 'One of the variables for location'
 	},
 ]

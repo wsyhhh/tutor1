@@ -1,46 +1,37 @@
 <template>
   <div class="question-box-container">
-    <b-jumbotron>
-      <template v-slot:lead>
-        {{currentQuestion.question}}
-      </template>
+    <b-jumbotron header="Revision Questions" header-level="4" style="margin-top:15px">
+      <template v-slot:lead>{{currentQuestion.question}}</template>
 
-			<hr class="my-4">
-			<b-list-group>
-				<b-list-group-item
-					v-for="(answer, index) in shuffledAnswers"
-					:key="index"
-					@click.prevent="selectAnswer(index)"
-					:class="answerClass(index)"
-				>
-					{{ answer }}
-				</b-list-group-item>
-			</b-list-group>
+      <hr class="my-4" />
+      <b-list-group>
+        <b-list-group-item
+          v-for="(answer, index) in shuffledAnswers"
+          :key="index"
+          @click.prevent="selectAnswer(index)"
+          :class="answerClass(index)"
+        >{{ answer }}</b-list-group-item>
+      </b-list-group>
 
-			<b-button @click="previous" variant="success" href="#">
-				Previous
-			</b-button>
-			<b-button
-				variant="primary"
-				@click="submitAnswer"
-				:disabled="selectedIndex === null || answered"
-			>
-				Submit
-			</b-button>
-            <b-button id="popover-3" variant="primary">Hint</b-button>
-            <b-popover target="popover-3" triggers="hover focus">
-                <!--template v-slot:title>Content via Slots</template-->
-                {{currentQuestion.hint}}
-            </b-popover>
-			<b-button @click="next" variant="success" href="#">
-				Next
-			</b-button>
-		</b-jumbotron>
-	</div>
+      <b-button @click="previous" variant="success" href="#">Previous</b-button>
+      <b-button
+        variant="primary"
+        @click="submitAnswer"
+        :disabled="selectedIndex === null || answered"
+      >Submit</b-button>
+      <b-button @click="next" variant="success" href="#">Next</b-button>
+      <b-button v-b-toggle.collapse-hint variant="primary">Hint</b-button>
+			<b-collapse id="collapse-hint" class="mt-2">
+					<b-card>
+					<p class="card-text">{{currentQuestion.hint}}</p>
+					</b-card>
+			</b-collapse>
+    </b-jumbotron>
+  </div>
 </template>
 
 <script>
-import _ from 'lodash'
+import _ from "lodash";
 export default {
   props: {
     currentQuestion: Object,
@@ -49,83 +40,92 @@ export default {
     increment: Function
   },
 
-  data () {
+  data() {
     return {
       selectedIndex: null,
       correctIndex: null,
       shuffledAnswers: [],
       answered: false
-    }
+    };
   },
   computed: {
-    answers () {
-      let answers = [...this.currentQuestion.incorrect_answers] // make a copy of incorrect_answers
-      answers.push(this.currentQuestion.correct_answer)
-      return answers
+    answers() {
+      let answers = [...this.currentQuestion.incorrect_answers]; // make a copy of incorrect_answers
+      answers.push(this.currentQuestion.correct_answer);
+      return answers;
     }
   },
-  watch: { // watch for changes in props
+  watch: {
+    // watch for changes in props
     currentQuestion: {
       immediate: true,
-      handler () {
-        this.selectedIndex = null
-        this.answered = false
-        this.shuffleAnswers()
+      handler() {
+        this.selectedIndex = null;
+        this.answered = false;
+        this.shuffleAnswers();
       }
     }
   },
   methods: {
-    selectAnswer: function (index) {
-      this.selectedIndex = index
+    selectAnswer: function(index) {
+      this.selectedIndex = index;
     },
-    shuffleAnswers () {
-      let answers = [...this.currentQuestion.incorrect_answers, this.currentQuestion.correct_answer]
-      this.shuffledAnswers = _.shuffle(answers)
-      this.correctIndex = this.shuffledAnswers.indexOf(this.currentQuestion.correct_answer)
+    shuffleAnswers() {
+      let answers = [
+        ...this.currentQuestion.incorrect_answers,
+        this.currentQuestion.correct_answer
+      ];
+      this.shuffledAnswers = _.shuffle(answers);
+      this.correctIndex = this.shuffledAnswers.indexOf(
+        this.currentQuestion.correct_answer
+      );
     },
-    submitAnswer () {
-      let isCorrect = false
+    submitAnswer() {
+      let isCorrect = false;
 
       if (this.selectedIndex === this.correctIndex) {
-        isCorrect = true
+        isCorrect = true;
       }
       this.answered = true
       this.increment(isCorrect)
     },
-    answerClass (index) {
-      let answerClass = ' '
+    answerClass(index) {
+      let answerClass = " ";
       if (!this.answered && this.selectedIndex === index) {
-        answerClass = 'selected'
+        answerClass = "selected";
       } else if (this.answered && this.correctIndex === index) {
-        answerClass = 'correct'
-      } else if (this.answered && this.selectedIndex === index && this.correctIndex !== index) {
-        answerClass = 'incorrect'
+        answerClass = "correct";
+      } else if (
+        this.answered &&
+        this.selectedIndex === index &&
+        this.correctIndex !== index
+      ) {
+        answerClass = "incorrect";
       }
-      return answerClass
+      return answerClass;
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .list-group {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 .list-group-item:hover {
-	background: #EEE;
-	cursor: pointer
+  background: #eee;
+  cursor: pointer;
 }
 .btn {
-	margin: 0 5px;
+  margin: 0 5px;
 }
 .selected {
-	background-color: lightblue;
+  background-color: lightblue;
 }
 .correct {
-	background-color: lightgreen ;
+  background-color: lightgreen;
 }
 .incorrect {
-	background-color: red;
+  background-color: red;
 }
-
 </style>

@@ -1,11 +1,11 @@
 export default [
   {
     topic: 'Topic 1',
-    name: 'Introduction to R'
+    name: 'Dataframe manipulation'
   },
   {
     topic: 'Topic 2',
-    name: 'Dataframe manipulation'
+    name: 'Basic statistical functions'
   },
   {
     topic: 'Topic 3',

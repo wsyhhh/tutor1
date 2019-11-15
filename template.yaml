@@ -10,7 +10,6 @@ Globals:
     Environment:
       Variables:
         GIT_PAGE: "https://tobereplace.github.io/tutor1/"
-
 Resources:
   SamRFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction

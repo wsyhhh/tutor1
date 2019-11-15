@@ -7,7 +7,7 @@ export default [
             'B = read_excel("Credit Risk Data xlsx")',
             'a = read.csv(Credit Risk Data)'
         ],
-        hint: 'q1 hint'
+        hint: 'Look at the header of the excel file'
     },
     {
         question: 'How to export the dataset (df1) as csv file named export?',
@@ -17,17 +17,17 @@ export default [
             'write.csv(df1 , file = export, row.names = FALSE)',
             'table(df1, file = "export", sep = ",", row.names = FALSE)'
         ],
-        hint: 'q2 hint'
+        hint: 'Remember to make the file name a string'
     },
     {
         question: 'How to retrieve the column vector named "Price", third column from a dataframe(df1)',
-        correct_answer: 'd1$Price',
+        correct_answer: 'df1$Price',
         incorrect_answers: [
-            'd1.Price',
-            'vector(d1$Price)',
+            'df1.Price',
+            'vector(df1$Price)',
             'vector(df1[,3])'
         ],
-        hint: 'q3 hint'
+        hint: 'You should be familiar with using $'
     },
     {
         question: 'Apply filter on the column vector (where price is a continuous numerical variable.) How to get rows that correspond the price between 50 and 100 inclusive',
@@ -37,6 +37,6 @@ export default [
             'df1(df1$Price  <= 100 && df1$Price >= 50)',
             'filter(df1, Price >= 50, Price <= 100]'
         ],
-        hint: 'q4 hint'
+        hint: 'It is inclusive'
     }
 ]
