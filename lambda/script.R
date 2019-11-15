@@ -5,12 +5,12 @@ handler <- function(...) {
     # multiValueQueryStringParameters,pathParameters,stageVariables,requestContext,body,isBase64Encoded]
     
     # print(requestInfo)
-    
+    SIR = Sys.getenv("GIT_PAGE")
     # print(requestInfo['httpMethod'])
     if(requestInfo['httpMethod'] == "GET") {
         return (list(
             statusCode = 301,
-            headers = list("Location" = "https://minhvuh.github.io/tutor1/"),
+            headers = list("Location" = SIR),
             body = ""
         ))
     }
